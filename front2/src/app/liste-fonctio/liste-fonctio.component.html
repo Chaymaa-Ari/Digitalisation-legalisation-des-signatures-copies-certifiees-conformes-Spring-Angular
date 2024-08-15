@@ -1,0 +1,64 @@
+<style>
+  td{
+   text-align: center;
+  }
+   th{
+       width: 200px;
+       background-color: #425363;
+       color:white;
+       text-align: center;
+   }
+
+
+   p{
+     margin-top: 60px;
+     margin-left: -1000px;
+     text-align: center;
+   }
+ </style>
+
+
+<br>
+<img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+
+<h1 class="text-align text-center " style="color:#425363;margin-top:-70px;"><b>Listes des Fonctionnaires</b></h1>
+
+
+<a routerLink="/ajoutFonc" routerLinkActive="active"><img src="assets/image/plus.png" style="margin-top:-115px;margin-left:1240px;"></a>
+<br>
+<div class="container" >
+     <table class="table table-striped">
+       <thead>
+         <tr>
+           <th>Identifiant</th>
+           <th>CIN</th>
+           <th>Nom</th>
+           <th>Prénom</th>
+           <th>Tele</th>
+           <th>Adresse</th>
+           <th>Fonction</th>
+           <th>Email</th>
+           <th>Password</th>
+           <th>Supprimer</th>
+           <th>Modifier</th>
+         </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor = "let citoyen of citoyens" >
+         <td>{{citoyen.id}}</td>
+         <td>{{citoyen.cin}}</td>
+         <td>{{citoyen.nom}}</td>
+         <td>{{citoyen.prenom}}</td>
+         <td>{{citoyen.tel}}</td>
+         <td>{{citoyen.adresse}}</td>
+         <td>{{citoyen.fonction}}</td>
+         <td>{{citoyen.email}}</td>
+         <td>{{citoyen.password}}</td>
+         <td><img src="/assets/image/supprimer.png" (click)="deleteCitoyen(citoyen.id)"></td>
+         <td><img src="/assets/image/bouton-modifier.png" (click)="updateCitoyen(citoyen.id)"></td>
+
+       </tr>
+       </tbody>
+     </table>
+</div>

@@ -1,0 +1,61 @@
+<style>
+  th{
+    background-color:#425363;
+    color:white;
+    text-align:center;
+  }
+  td{
+    text-align: center;
+  }
+  button{
+    background-color: transparent;
+   border: none;
+  padding: 0;
+  display: inline-block;
+  }
+  img{
+ background-color: transparent;
+  }
+  table{
+    width:650px;
+    margin-left:50px;
+  }
+  section
+  {
+   margin-top:-550px;
+    margin-left:750px;
+    margin-right:20px;
+
+  }
+</style>
+<br>
+<h2 style="margin-left:210px;color:#425363;">Liste des Communes </h2>
+
+
+<br>
+<br>
+<br>
+<table class="table table-striped ">
+  <thead>
+  <tr>
+    <th style="width:80px;">Id Com</th>
+    <th >Nom de la commune</th>
+    <th>Adresse</th>
+    <th style="width:80px;">Modifier</th>
+    <th style="width:80px;">Supprimer</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor = "let comune of comunes" >
+    <td>{{comune.id}}</td>
+    <td>{{comune.nom}}</td>
+    <td>{{comune.adresse}}</td>
+    <td><button (click)="getCommuneById(comune.id)"><img src="assets/image/bouton-modifier.png"></button></td>
+    <td><button  (click)="deleteCommune(comune.id)"><img src="assets/image/supprimer.png"></button></td>
+
+  </tr>
+</tbody>
+</table>
+<section>
+<app-formcommune></app-formcommune>
+</section>

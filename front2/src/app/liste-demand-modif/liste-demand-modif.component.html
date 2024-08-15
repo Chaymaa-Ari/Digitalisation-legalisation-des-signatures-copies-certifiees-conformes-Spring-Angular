@@ -1,0 +1,45 @@
+<style>
+  td{
+   text-align: center;
+  }
+   th{
+       width: 200px;
+       background-color: #425363;
+       color:white;
+       text-align: center;
+   }
+
+
+   p{
+     margin-top: 60px;
+     margin-left: -1000px;
+     text-align: center;
+   }
+ </style>
+
+ <br>
+ <img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+ <h1 style="text-align:center;color:#425363;margin-top:-60px;"><b>Liste des Demandes de Modifications</b></h1>
+
+<br>
+<div class="container" >
+     <table class="table table-striped">
+       <thead>
+         <tr>
+           <th>Identifiant</th><th>Code Confédentiel</th><th>Sujet</th><th>Document</th><th>Accepter</th><th>Refuser</th>
+         </tr>
+       </thead>
+
+          <tbody> <tr *ngFor = "let dmd of demandes" >
+              <td>{{dmd.id_modif}}</td>
+              <td>{{dmd.codeconfi}}</td>
+              <td>{{dmd.sujet}}</td>
+              <td><img src="assets/image/{{dmd.name}}" style="width:100px;height:100px;" ></td>
+              <td><a routerLink="/listecli" routerLinkActive="active" ><img src="assets/image/jaccepte.png"></a></td>
+              <td><a (click)="deleteDemande(dmd.id_modif)"><img src="assets/image/entree-interdite.png"></a></td>
+          </tr>
+        </tbody>
+
+     </table>
+</div>

@@ -1,0 +1,68 @@
+<style>
+  th{
+    background-color:#425363;
+    color:white;
+    text-align:center;
+  }
+  td{
+    text-align: center;
+  }
+  button{
+    background-color: transparent;
+   border: none;
+  padding: 0;
+  display: inline-block;
+  }
+  img{
+ background-color: transparent;
+  }
+</style>
+<br>
+
+<img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+<h1 style="text-align:center;color:#425363;margin-top:-60px;"><b>Liste des Demandes d'inscription</b></h1>
+
+<br>
+<br>
+<br>
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id Demande</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>CIN</th>
+    <th>Adresse</th>
+    <th>Tel</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Code Confidentiel</th>
+    <th>Accepter</th>
+    <th>Refuser</th>
+    <th>Mail</th>
+
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor = "let demande of demandes" >
+    <td>{{demande.id}}</td>
+    <td>{{demande.nom}}</td>
+    <td>{{demande.prenom}}</td>
+    <td>{{demande.cin}}</td>
+    <td>{{demande.adresse}}</td>
+    <td>{{demande.tel}}</td>
+    <td>{{demande.email}}</td>
+    <td>{{demande.password}}</td>
+    <td><img style="width:100px;height:100px;" src="assets/image/{{demande.name}}"></td>
+    <td><button (click)="getClientById(demande.id)"><img src="assets/image/jaccepte.png"></button></td>
+    <td><a><img src="assets/image/entree-interdite.png" (click)="deleteDemande(demande.id)"></a></td>
+    <td><button (click)="send(demande.email)"><img src="assets/image/mail.jpg" style="width:30px;height:30px;"></button></td>
+
+
+
+  </tr>
+</tbody>
+</table>
+</div>

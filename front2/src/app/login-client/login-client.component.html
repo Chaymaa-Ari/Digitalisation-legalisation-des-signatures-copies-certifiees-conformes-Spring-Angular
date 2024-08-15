@@ -1,0 +1,124 @@
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url('assets/image/back05.jpg');
+  }
+
+  .video-container {
+    position: fixed;
+    width: 100%; /* Ajuster selon vos besoins */
+    height: 100vh;
+    left: 0;
+    z-index: -1; /* Assurez-vous que la vidéo est derrière les autres éléments */
+  }
+
+  #myVideo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1; /* Assurez-vous que le contenu est au-dessus de la vidéo */
+    max-width: 500px; /* Limitez la largeur maximale du formulaire */
+    width: 80%; /* Ajoutez une largeur en pourcentage pour la responsivité */
+}
+
+.card {
+    margin: auto; /* Centre le formulaire horizontalement */
+    max-width: 800px; /* Ajustez la largeur maximale du formulaire */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Augmente la bordure pour un aspect plus arrondi */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Augmente l'ombre pour un effet plus prononcé */
+    background: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
+    padding: 20px; /* Ajoutez de l'espace intérieur pour le contenu */
+    box-sizing: border-box; /* Inclure le remplissage et la bordure dans la largeur et la hauteur totales */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px; /* Augmentez la hauteur du champ de saisie */
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Ajoutez un espacement supplémentaire entre les champs */
+}
+
+button {
+    width: 100%;
+    padding: 12px; /* Augmentez la hauteur du bouton */
+    box-sizing: border-box;
+    background-color: #425363;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Augmente la bordure pour un aspect plus arrondi */
+    cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color:#425363;
+  font-size: 20px;
+  margin-top:10px;
+
+}
+#bg-video {
+  min-width: 100%;
+  min-height: 100vh;
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#bg-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.video-overlay {
+  position: absolute;
+  background-color: rgba(35,45,57,0.8);
+  top: 0;
+  left: 0;
+  bottom: 7px;
+  width: 100%;
+}
+
+</style>
+<body>
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/image/video.mp4" type="video/mp4" />
+ </video>
+
+  <section class="content">
+    <div class="card">
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="loginForm()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" class="form-control" [(ngModel)]="user.email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe :</label>
+            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="user.password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Connexion</button>
+          <br>
+          <a routerLink="/inscrire" routerLinkActive="active">S'inscrire</a>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+<router-outlet></router-outlet>

@@ -1,0 +1,119 @@
+
+<title>Formulaire d'inscription</title>
+<style>
+
+
+td:has(input){
+width:290px;
+height:40px;
+margin-right: 100px;
+
+}
+td:has(label){
+height:40px;
+width:200px;}
+td:has(p){
+height:40px;
+width:200px;
+}
+
+textarea{
+  border:1px solid;
+  border-color:#339cff;
+  width:600px;
+  height:200px;
+}
+
+input[type="text"]{
+  border:1px solid;
+  border-color:#339cff;
+  width:200px;
+  height:40px;
+}
+
+  input[type="submit"]
+{
+  margin-left: 300px;
+width:120px;
+height:40px;
+background-color: #339cff  ;
+border-radius:3px;
+border:none;
+color:white;
+
+
+}
+input[type="text"]:focus,textarea:focus{
+
+  padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-color:black;
+    }
+table{
+  margin-left:110px;
+}
+tr{
+height:50px;
+}
+
+</style>
+
+<br>
+<img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+<h1 style="text-align:center;color:#425363;margin-top:-60px;"><b>Demande Siganture Des Documents</b></h1>
+
+<br>
+<div class="container">
+
+    <form enctype="multipart/form-data" (ngSubmit)="onSubmit()">
+     <table style="">
+
+          <tr>
+             <td><label>Document : </label></td>
+
+              <td>
+                <input type="file" (change)="onSelectFile($event)" >
+                <img>
+             <img [src]="imgURL" height="200" *ngIf="imgURL"></td>
+</tr>
+<tr>
+  <td><label>Date  : </label></td>
+
+  <td>
+     <input type="Date" id="date" [(ngModel)]= "signatureRequest.date1" name="date" >
+
+  </td>
+</tr>
+
+             <tr>
+                <td><label>Votre Code confidentiel  : </label></td>
+
+              <td>
+                <input type="text"  id="codeconfidentiel" [(ngModel)]= "signatureRequest.codeconfi" name="Codeconfidentiel">
+
+             </td>
+             </tr>
+             <tr>
+              <td><label>Raison  : </label></td>
+
+              <td>
+                 <textarea id="raison" [(ngModel)]= "signatureRequest.raison" name="raison" ></textarea>
+
+              </td>
+           </tr>
+           <br>
+          <tr>
+<td></td>
+             <td >
+                <input type="submit" value="Ajouter" >
+             </td>
+
+          </tr>
+     </table>
+  </form>
+  </div>
+
+
+

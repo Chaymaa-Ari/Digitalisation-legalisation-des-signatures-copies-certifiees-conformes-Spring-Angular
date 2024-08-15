@@ -1,0 +1,556 @@
+<style>
+
+  .main-banner {
+    position: relative;
+  }
+
+  #bg-video {
+      min-width: 100%;
+      min-height: 100vh;
+      max-width: 100%;
+      max-height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+  }
+
+  #bg-video::-webkit-media-controls {
+      display: none !important;
+  }
+
+  .video-overlay {
+      position: absolute;
+      background-color: rgba(35,45,57,0.8);
+      top: 0;
+      left: 0;
+      bottom: 7px;
+      width: 100%;
+  }
+
+  .main-banner .caption {
+    text-align: center;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .main-banner .caption h6 {
+    margin-top: 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .main-banner .caption h2 {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-size: 84px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .main-banner .caption h2 em {
+    font-style: normal;
+    color: #ed563b;
+    font-weight: 900;
+  }
+
+  .header-area {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    height: 80px;
+    background: rgba(250,250,250,0.1);
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+  }
+
+  .header-area .main-nav {
+    min-height: 80px;
+    background: transparent;
+  }
+
+  .header-area .main-nav .logo {
+    line-height: 80px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: left;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo em {
+    font-style: normal;
+    color: #ed563b;
+    font-weight: 900;
+  }
+
+  .header-area .main-nav .nav {
+    float: right;
+    margin-top: 20px;
+    margin-right: -20px;
+    background-color: transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    z-index: 999;
+  }
+
+  .header-area .main-nav .nav li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-area .main-nav .nav li a {
+    display: block;
+    font-weight: 500;
+    font-size: 13px;
+    color: #7a7a7a;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    height: 40px;
+    line-height: 40px;
+    border: transparent;
+    letter-spacing: 1px;
+  }
+
+  .header-area .main-nav .nav li a {
+    color: #fff;
+  }
+
+  .header-area .main-nav .nav li:hover > a,
+  .header-area .main-nav .nav li > a.active {
+    color: #ed563b!important;
+    opacity: 1;
+  }
+
+
+  .section-heading {
+    text-align: center;
+    margin-top: 140px;
+    margin-bottom: 80px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #232d39;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .section-heading h2 em {
+    font-style: normal;
+    color: #ed563b;
+  }
+
+  .section-heading img {
+    margin: 20px auto;
+  }
+
+
+  .section-heading {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 80px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #232d39;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .section-heading h2 em {
+    font-style: normal;
+    color: #ed563b;
+  }
+
+  .section-heading img {
+    margin: 20px auto;
+  }
+
+  .dark-bg h2 {
+    color: #fff;
+    position: relative;
+
+  }
+
+  .dark-bg p {
+    color: #fff;
+    position: relative;
+  }
+
+  .section-bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .section-bg:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35,45,57,0.8);
+  }
+  .section-bg:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    /* Autres styles pour le texte */
+}
+
+  #features {
+    margin-bottom: 80px;
+  }
+
+  .feature-item {
+    display: inline-block;
+    margin-bottom: 60px;
+  }
+
+  .feature-item .left-icon img {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .feature-item .right-content {
+    display: inline;
+  }
+
+  .feature-item .right-content h4 {
+    margin-top: 0px;
+    margin-bottom:  7px;
+    letter-spacing: 0.25px;
+    color: #232d39;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .feature-item .right-content a.text-button {
+    margin-top: 7px;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #ed563b;
+    font-weight: 500;
+  }
+
+
+a{
+  text-decoration: none;
+}
+
+  .menu-dropdown {
+   width:150px;
+
+    position: absolute;
+    background: rgba(35,45,57,0.8);
+    z-index: 100;
+    transition:
+      0.5s padding;
+      display: none;
+
+
+  }
+
+  .menu-dropdown:after {
+    content: "";
+    display: block;
+    height: 0;
+    border-top: 5px solid #ebebeb;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 101;
+    transition: 0.5s border-top;
+  }
+  .menu:hover .menu-dropdown {
+    display: block;
+    padding: 15px 0;
+}
+
+  .menu:not(:hover) > .menu-dropdown {
+    padding: 8px 0;
+    background: #dddddd;
+    z-index: 99;
+  }
+
+  .menu:not(:hover) > .menu-dropdown:after {
+    border-top-color: #dddddd;
+  }
+
+  .menu:not(:hover) > .menu-title:after {
+    border-bottom-color: #dddddd;
+  }
+
+  .menu-dropdown > * {
+    overflow: hidden;
+    height: 40px;
+    padding: 5px 5px;
+    background: rgba(0,0,0,0);
+    white-space: nowrap;
+    transition:
+      0.5s height cubic-bezier(.73,.32,.34,1.5),
+      0.5s padding cubic-bezier(.73,.32,.34,1.5),
+      0.5s margin cubic-bezier(.73,.32,.34,1.5),
+      0.5s 0.2s color,
+      0.2s background-color;
+  }
+
+  .menu-dropdown > *:hover {
+    background: rgba(0,0,0,0.1);
+  }
+
+  .menu:not(:hover) > .menu-dropdown > * {
+    visibility: hidden;
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    color: rgba(25,25,25,0);
+    transition:
+      0.5s 0.1s height,
+      0.5s 0.1s padding,
+      0.5s 0.1s margin,
+      0.3s color,
+      0.6s visibility;
+    z-index: 99;
+  }
+
+</style>
+
+
+<header class="header-area header-sticky">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                  <!-- ***** Logo Start ***** -->
+                  <img style="margin-top:-32px;margin-left:-80px;width:150px;height:150px;" src="assets/image/royaume (2).png" >
+                  <!-- ***** Logo End ***** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li><a href="#" class="active">Acceuil</a></li>
+                      <li><a href="#trainers">Services</a></li>
+                      <li>
+                          <a  href="#schedule">À Propos</a>
+                      </li>
+
+                      <li>
+                        <a href="#click" class="menu">
+                          Se connecter
+                          <ul class="menu-dropdown">
+                            <li><a routerLink="/logincl">Citoyen</a></li>
+                            <li><a routerLink="/login">Administrateur</a></li>
+
+                          </ul>
+                        </a>
+                      </li>
+
+                  </ul>
+
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+
+
+<!--Maaaaaaiiiin Bannnnnner       -->
+
+<div class="main-banner">
+  <video autoplay muted loop id="bg-video">
+     <source src="assets/image/video.mp4" type="video/mp4" />
+  </video>
+
+  <div class="video-overlay header-text">
+   <div class="caption">
+    <h6>Bienvenue Dans Notre Application De Gestion Des Arrondissements Qui Vous Propose Divers Services </h6>
+    <h2>Arrond<em>issement</em></h2>
+
+   </div>
+  </div>
+</div>
+
+<!--   Serviiiiiiiiiiiiiiiice   -->
+
+
+<section class="section" id="trainers">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+              <div class="section-heading">
+                  <h2>NOS <em>SERVICES</em></h2>
+                  <img src="assets/image/line-dec.png" alt="">
+                  <p>ZAYCK propose plusieurs services dédiés aux citoyens pour faciliter leur paperasse quotidienne.</p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-4">
+          <div class="card">
+              <img src="assets/image/product-1-720x480.jpg" class="card-img-top" alt="Card Image">
+              <div class="card-body">
+                  <h4 class="card-title">Gestion Des Documents</h4>
+                  <p class="card-text" style="font-size:15px;">Vous pouvez bénéficier des services offerts par notre application en toute sécurité à distance ou sur place.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card">
+            <img src="assets/image/product-2-720x480.jpg" class="card-img-top" alt="Card Image">
+            <div class="card-body">
+                <h4 class="card-title">Gestion Des Signatures</h4>
+                <p class="card-text" style="font-size:15px;">Vous pouvez bénéficier de notre service actuel , les signaures des copies, que vous pouvez déposez en ligne </p>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-4">
+      <div class="card">
+          <img src="assets/image/product-3-720x480.jpg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+              <h4 class="card-title">Gestion Des Comptes</h4>
+              <p class="card-text" style="font-size:15px;">Via l'application vous pouvez facilement accéder.
+                Créez votre Compte et Profitez de nos services</p>
+
+          </div>
+      </div>
+  </div>
+      </div>
+
+      <br>
+
+
+  </div>
+</section>
+
+
+<!--  A Proooopos -->
+
+
+<section class="section section-bg" id="schedule" style="background-image: url(assets/image/about-fullscreen-1-1920x700.jpg)">
+  <div class="container" style="height:600px;">
+      <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+              <div class="section-heading dark-bg">
+                  <h2>À Propos  <em> De Nous</em></h2>
+                  <img src="assets/image/line-dec.png" alt="">
+                  <p>Notre application offre une solution complète pour la gestion efficace des arrondissements</p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="cta-content text-center dark-bg" style="color:white;">
+                  <p>Elle intègre une cartographie interactive pour visualiser facilement les différentes zones de la ville. Les utilisateurs peuvent accéder à des outils de gestion des ressources et des services municipaux, tels que l'éclairage public et la collecte des déchets. La plateforme facilite également la communication entre les autorités et les citoyens, permettant l'envoi de notifications importantes et la réception de feedback.</p>
+
+                  <p>De plus, elle inclut un système pour la gestion des permis et assure le suivi de la conformité aux réglementations. Grâce à ses capacités d'analyse de données, l'application aide à prendre des décisions éclairées pour améliorer la vie urbaine. Accessible via mobile et web, elle est conçue pour être intuitive pour les administrateurs de la ville et les résidents, favorisant une gestion urbaine harmonieuse et efficace</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Nos Fonctionnaire -->
+
+<section class="section" id="features">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+              <div class="section-heading">
+                  <h2>NOS <em>FONCTIONNAIRES</em></h2>
+                  <img src="assets/image/line-dec.png" alt="waves">
+                  <p>Nos fonctionnaires d'arrondissement, experts en divers domaines essentiels, s'engagent activement à améliorer la vie communautaire et à répondre aux besoins des citoyens avec efficacité et dévouement.</p>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <ul class="features-items">
+                  <li class="feature-item">
+                      <div class="left-icon">
+                          <img src="assets/image/zaineb.jpeg" style="width:120px;height:120px;border-radius:3px;" alt="First One">
+                      </div>
+                      <div class="right-content">
+                          <h4>Zainab Raoui</h4>
+                          <p><em>"Spécialisé dans le développement et l'aménagement du territoire, il œuvre à planifier l'espace urbain de manière durable et fonctionnelle."</em></p>
+                      </div>
+                  </li>
+                  <li class="feature-item">
+                      <div class="left-icon">
+                          <img src="assets/image/assag.jpg" style="width:120px;height:120px;border-radius:3px;" alt="second one">
+                      </div>
+                      <div class="right-content">
+                          <h4>Assag Khadija</h4>
+                          <p><em> " Responsable des Operations administratives et des citoyens qui veulent s'inscrire dans notre application "</em></p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-6">
+              <ul class="features-items">
+                  <li class="feature-item">
+                      <div class="left-icon">
+                          <img src="assets/image/yassine.png" style="width:120px;height:120px;border-radius:3px;" alt="fourth muscle">
+                      </div>
+                      <div class="right-content">
+                          <h4>Barka Yassine</h4>
+                          <p><em>"Veille à la sécurité et à l'ordre public, intervenant dans les situations d'urgence et collaborant avec les services de secours."</em></p>
+                      </div>
+                  </li>
+                  <li class="feature-item">
+                      <div class="left-icon">
+                          <img src="assets/image/cv.jpg" style="width:120px;height:120px;border-radius:3px;" alt="training fifth">
+                      </div>
+                      <div class="right-content">
+                          <h4>Ari Chaymaa</h4>
+                          <p><em>"Pilote les opérations administratives, coordonne les différents départements et s'assure de l'efficacité de la gestion municipa"</em></p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <br>
+  </div>
+</section>
+
+
+

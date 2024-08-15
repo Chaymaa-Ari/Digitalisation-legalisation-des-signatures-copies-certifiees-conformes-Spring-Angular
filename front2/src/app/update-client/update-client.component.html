@@ -1,0 +1,129 @@
+<style>
+
+
+
+  div{
+
+
+      margin-top:60px;
+
+
+  }
+  td:has(input){
+  width:290px;
+  height:40px;
+
+  }
+  td:has(label){
+  height:40px;
+  width:290px;}
+  td:has(p){
+  height:40px;
+  width:200px;
+  }
+
+
+  input[type="text"],input[type="email"],input[type="password"]{
+   width:330px;
+   height:25px;
+   border:none;
+   border-bottom:1px solid #339cff;
+   outline: 0;
+
+  }
+  input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus{
+
+  padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-color:black;
+    }
+    input[type="submit"]
+  {
+
+
+  width:150px;
+  height:40px;
+  background-color: #339cff  ;
+  border-radius:3px;
+  border:none;
+  color:white;
+  margin-left:20px;
+
+
+  }
+
+  label{
+   margin-left:50px;
+  }
+  tr{
+  height:50px;
+  }
+  </style>
+  <br>
+  <img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+<h1 style="text-align:center;color:#425363;margin-top:-60px;"><b>Modification Clients</b></h1>
+<br><br>
+
+<div class="container">
+  <form (ngSubmit) ="onSubmit()">
+   <table>
+      <tr>
+          <td><label>Code Confidentiel:</label> </td>
+          <td>
+             <input type="text" id="cod" [(ngModel)]= "citoyen.codeconfidentiel" name="codeconfidentiel">
+          </td>
+          <td><label>Nom : </label></td>
+          <td>
+             <input type="text" id="nom" [(ngModel)]= "citoyen.nom" name="nom">
+          </td>
+      </tr>
+        <tr>
+          <td><label>CIN : </label></td>
+          <td>
+             <input type="text" id="cin" [(ngModel)]= "citoyen.cin" name="cin">
+          </td>
+
+
+           <td><label>Prénom : </label></td>
+           <td>
+              <input type="text" id="prenom" [(ngModel)]= "citoyen.prenom" name="prenom">
+
+           </td>
+      </tr>
+        <tr>
+
+          <td><label>Telephone :</label> </td>
+           <td>
+              <input type="text" id="tel" [(ngModel)]= "citoyen.tel" name="tel">
+           </td>
+
+           <td><label>Adresse :</label> </td>
+           <td>
+              <input type="text" id="adr" [(ngModel)]= "citoyen.adresse" name="adr">
+           </td>
+
+        </tr>
+        <tr>
+            <td><label>Email :</label> </td>
+           <td>
+              <input type="email"  id="email"[(ngModel)]= "citoyen.email"  name="email">
+           </td>
+           <td><label>Password :</label> </td>
+           <td>
+              <input type="text" id="pass" [(ngModel)]= "citoyen.password"  name="pass">
+           </td>
+          </tr>
+           <tr></tr>
+        <tr>
+
+        <td></td>
+           <td></td>
+           <td colspan="4">
+            <input type="submit" value="Modifier" >
+         </td>
+        </tr>
+   </table>
+</form>
+</div>

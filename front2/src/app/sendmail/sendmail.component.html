@@ -1,0 +1,83 @@
+<style>
+  form {
+      text-align: center;
+      margin: 100px;
+      margin-left: 350px;
+      border:1px solid;
+      margin-top: 20px;
+      border-color:rgba(152, 149, 149, 0.1);
+      border-radius: 6px;
+      width:600px;
+      background-color:rgba(152, 149, 149, 0.1);
+  }
+  textarea{
+      border:1px solid;
+      border-color:#339cff;
+      width:350px;
+      height:100px;
+    }
+  label {
+          height:40px;
+          width:240px;
+      }
+      input{
+          width:290px;
+          height:40px;
+
+          }
+
+
+  input[type="text"],input[type="email"],input[type="password"]{
+      width:330px;
+      height:25px;
+      border:none;
+      border-bottom:1px solid #339cff;
+      outline: 0;
+
+     }
+     input[type="text"]:focus,input[type="email"]:focus{
+
+      padding-bottom: 6px;
+       font-weight: 700;
+       border-width: 3px;
+       border-color:black;
+       }
+      textarea:focus{
+
+            padding-bottom: 6px;
+            font-weight: 900;
+            border-width: 3px;
+            border-color:black;
+            }
+
+            button[type="submit"] {
+              width: 150px;
+              height: 40px;
+              background-color: #339cff;
+              border-radius: 3px;
+              border: none;
+              color: white;
+              margin-top: 50px;
+              cursor: pointer;
+          }
+</style>
+<br>
+<img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+<h1 style="text-align:center;color:#425363;margin-top:-60px;"><b>Email De Vérification</b></h1>
+
+<form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+<br>
+<br>
+<img src="assets/image/user1.png" style="width:25px;height:25px;margin-right:20px;">
+  <input type="email" id="destinataire" formControlName="destinataire" required  placeholder="Destinatiare"/><br><br>
+<br>
+<img src="assets/image/email1.png" style="width:25px;height:25px;margin-right:20px;">
+  <input type="text" id="subject" formControlName="subject" required placeholder="Object" /><br><br>
+
+<br>
+<img src="assets/image/codeconfi (2).png" style="width:25px;height:25px;margin-right:5px;margin-top:-120px;">
+  <textarea id="body" formControlName="body" required placeholder="Voici Votre Code Confidentiel" ></textarea><br><br>
+
+  <button type="submit" [disabled]="emailForm.invalid" style="margin-bottom:40px;width:90px;">Send Email</button>
+</form>

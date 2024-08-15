@@ -1,0 +1,96 @@
+
+<title>Formulaire d'inscription</title>
+<style>
+
+
+td:has(input){
+width:290px;
+height:40px;
+
+}
+td:has(label){
+height:40px;
+width:240px;}
+td:has(p){
+height:40px;
+width:200px;
+}
+
+
+input[type="text"],input[type="email"],input[type="password"]{
+ width:400px;
+ height:25px;
+ border:none;
+ border-bottom:1px solid #339cff;
+ outline: 0;
+
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus{
+
+padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-color:black;
+  }
+  input[type="submit"]
+{
+
+
+width:120px;
+height:40px;
+background-color: #339cff  ;
+border-radius:3px;
+border:none;
+color:white;
+
+
+}
+table{
+  margin-left:40px;
+}
+tr{
+height:30px;
+}
+</style>
+<br>
+<br>
+<h2 style="margin-left:120px;">Ajouter Commune</h2>
+<br>
+<div class="container">
+
+    <form (ngSubmit)="onSubmit()">
+     <table>
+          <tr>
+             <td><br><br></td>
+          </tr>
+          <tr>
+             <td><label>Nom De la commune : </label></td>
+             </tr>
+             <tr>
+              <td>
+                <input type="text" id="nom" [(ngModel)]="newCm.nom" name="nom">
+             </td>
+</tr>
+             <tr>
+             <td><label>Adresse de la commune : </label></td>
+             </tr>
+             <tr>
+             <td>
+                <input type="text" id="adresse" [(ngModel)]="newCm.adresse" name="adresse">
+
+             </td>
+          </tr>
+             <tr></tr>
+          <tr>
+
+             <td >
+                <input type="submit" value="Ajouter" >
+             </td>
+
+          </tr>
+     </table>
+  </form>
+  </div>
+
+
+

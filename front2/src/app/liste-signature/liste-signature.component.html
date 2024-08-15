@@ -1,0 +1,60 @@
+<style>
+  th{
+    background-color:#425363;
+    color:white;
+    text-align:center;
+  }
+  td{
+    text-align: center;
+
+  }
+  button{
+    background-color: transparent;
+   border: none;
+  padding: 0;
+  display: inline-block;
+  }
+  img{
+ background-color: transparent;
+  }
+</style>
+<br>
+<img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+<h1 style="text-align:center;color:#425363;margin-top:-60px;"><b>Liste des Demandes des Signatures</b></h1>
+
+
+<br>
+<br>
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id Demande</th>
+    <th>Code confidentiel</th>
+    <th>Raison</th>
+    <th>Document</th>
+
+  <th>Date</th>
+    <th>Vérifier Signature</th>
+    <th>Refuser</th>
+    <th>Accepter</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor = "let demande of signatures" >
+    <td>{{demande.id}}</td>
+    <td>{{demande.codeconfi}}</td>
+    <td>{{demande.raison}}</td>
+
+    <td><img style="width:100px;height:100px;" src="assets/image/{{demande.name}}"></td>
+
+    <td>{{demande.date1}}</td>
+    <td><a href="/listecli"><img src="assets/image/pen.png"></a></td>
+    <td><a (click)="delete(demande.id)"><img src="assets/image/entree-interdite.png"></a></td>
+    <td><button  (click)="getById(demande.id)"><img src="assets/image/jaccepte.png"></button></td>
+
+  </tr>
+</tbody>
+</table>
+</div>

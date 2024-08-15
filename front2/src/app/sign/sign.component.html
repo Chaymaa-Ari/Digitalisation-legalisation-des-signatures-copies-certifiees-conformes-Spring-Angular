@@ -1,0 +1,51 @@
+
+
+
+
+<style>
+
+
+
+  .concatenated-image {
+      width: 100%;
+      height: auto;
+      /*border: 2px solid red;*/
+    }
+
+  /* Style du bouton "Signer" */
+  button {
+    padding: 10px 20px;
+    background-color: #339cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /* Pour centrer le bouton */
+    margin: 20px auto;
+    margin-top: 20px;
+  }
+
+  /* Change la couleur du bouton au survol */
+  button:hover {
+    background-color: #339cff;
+  }
+</style>
+
+<br>
+
+<h2 style="text-align:center;">Document è signer</h2>
+<table>
+  <tr>
+
+
+    <td><img style="margin-top:10px;width:60%; height: 50%; margin-left:300px;" src="assets/image/{{dem.name}}" alt="Image à signer"></td>
+  </tr>
+</table>
+
+<button (click)="concatImages()">Signer</button>
+
+<img *ngIf="concatenatedImageData" [src]="concatenatedImageData" alt="Image Concatenée"class="concatenated-image">
+<button (click)="downloadConcatenatedImage()">Télécharger l'image concaténée</button>
+
+
+

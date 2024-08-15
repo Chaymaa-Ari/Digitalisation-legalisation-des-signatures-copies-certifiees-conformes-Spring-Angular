@@ -1,0 +1,57 @@
+<style>
+  td{
+   text-align: center;
+  }
+   th{
+       width: 200px;
+       background-color: #425363;
+       color:white;
+       text-align: center;
+   }
+
+
+   p{
+     margin-top: 60px;
+     margin-left: -1000px;
+     text-align: center;
+   }
+ </style>
+
+
+<br>
+<img src="assets/image/royaume (2).png" style="margin-top:-30px;margin-left:10px;width:100px;height:100px;">
+
+
+<h1 class="text-align text-center " style="color:#425363;margin-top:-70px;"><b>Listes des citoyens</b></h1>
+<br>
+<br>
+<br>
+
+
+<div class="container" >
+     <table class="table table-striped">
+       <thead>
+         <tr>
+          <th>Code Confidentiel</th>
+           <th>CIN</th><th>Nom</th><th>Prénom</th><th>Tele</th><th>Adresse</th><th>Email</th><th>Password</th><th>Signature</th><th>Supprimer</th><th>Modifier</th>
+         </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor = "let citoyen of citoyens" >
+        <td>{{citoyen.codeconfidentiel}}</td>
+         <td>{{citoyen.cin}}</td>
+         <td>{{citoyen.nom}}</td>
+         <td>{{citoyen.prenom}}</td>
+         <td>{{citoyen.tel}}</td>
+         <td>{{citoyen.adresse}}</td>
+
+         <td>{{citoyen.email}}</td>
+         <td>{{citoyen.password}}</td>
+         <td><img style="width:100px;height:100px;" src="assets/image/{{citoyen.name}}"></td>
+         <td><img src="/assets/image/supprimer.png" (click)="deleteCitoyen(citoyen.codeconfidentiel)"></td>
+         <td><img src="/assets/image/bouton-modifier.png" (click)="updateCitoyen(citoyen.codeconfidentiel)"></td>
+
+       </tr>
+       </tbody>
+     </table>
+</div>

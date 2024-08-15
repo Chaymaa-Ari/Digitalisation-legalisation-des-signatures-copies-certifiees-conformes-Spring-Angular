@@ -1,0 +1,26 @@
+<!-- copie-conforme-formulaire.component.html -->
+
+<form (ngSubmit)="onSubmit()">
+  <label for="nom">Nom:</label>
+  <input type="text" id="nom" [(ngModel)]="newClient.Nom" name="nom" required>
+
+  <label for="prenom">Prenom:</label>
+  <input type="text" id="prenom" [(ngModel)]="newClient.Prenom" name="prenom" required>
+
+  <label for="nomPere">Nom du Père:</label>
+  <input type="text" id="nomPere" [(ngModel)]="newClient.NomPere" name="nomPere" required>
+
+  <label for="nomMere">Nom de la Mère:</label>
+  <input type="text" id="nomMere" [(ngModel)]="newClient.NomMere" name="nomMere" required>
+
+  <label for="date">Nom:</label>
+  <input type="text" id="date" [(ngModel)]="newClient.DateNais" name="date" required>
+
+
+
+
+  <label for="raison">Raison de la demande:</label>
+  <textarea id="raison" [(ngModel)]="newClient.raison" name="raison" required></textarea>
+
+  <button type="submit">Envoyer la demande</button>
+</form>
